@@ -6,6 +6,7 @@
     --color__light-blue :  #95cbca;
     --color__yellow :  #ffcc5d;
     --color__orange :  #ff9034;
+    --color__light-orange : #ffbf8b;
     --color__dart-grey :  #6d6d6d;
     --color__black : #000000;
       
@@ -59,9 +60,13 @@ li{
 /* Typography */
 
 h1{
-    font-size : var(--font-large);
+    font-size : var(--font-medium);
     font-weight: var(--weight-bold);
 } 
+
+h1 .font__change {
+
+}
 
 h2{
 
@@ -157,5 +162,94 @@ h3{
 }
 
 
+/* Home */
 
+#home{
+    position: relative;
+    background: url(./img/bg_img.jpg) no-repeat center/cover; 
+    width: 100%;
+    height: 600px;
+    margin-bottom: 70px;
+    
+}
+
+.home__message{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid black;
+    z-index: 3;
+}
+
+.home__massage-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ffffff;
+    width: 620px;
+    height: 320px;
+    z-index: 2;
+
+}
+.home__box-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 620px;
+    height: 320px;
+    z-index: 1;
+}
+
+.home__message h2{
+    color: var(--color__light-blue);
+    font-weight: var(--weight-regular);
+    
+}
+
+.home__box{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+}
+
+.blue{
+    background-color: var(--color__light-blue);
+    top: -30px;
+    left: -30px;
+}
+
+.orange{
+    background-color: var(--color__light-orange);
+    top: 60px;
+    left: -60px;
+}
+
+.pink{
+    background-color: var(--color__pink);
+    left: -210px;
+}
+
+.person{
+    width: 750px;
+    height: 450px;
+    background: url(./img/home-person.png) no-repeat center/cover;
+    top: -60px;
+    left: 240px;
+    z-index: -1;
+}
+
+.home__message h3{
+    font-family: 'Poiret One', cursive;
+}
 
