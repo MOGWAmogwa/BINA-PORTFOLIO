@@ -9,14 +9,12 @@
     --color__light-orange : #ffbf8b;
     --color__dart-grey :  #6d6d6d;
     --color__black : #000000;
-      
-    /* Size */
-    
+
 
     /* Font size */
-    --font-large : 48px;
-    --font-medium : 28px;
-    --font-regular : 18px;
+    --font-large : 36px;
+    --font-medium : 24px;
+    --font-regular : 20px;
     --font-small : 16px;
     --font-micro: 14px;
 
@@ -24,6 +22,10 @@
     --weight-bold: 800;
     --weight-semi-bold: 600;
     --weight-regular : 400;
+
+    /* Font letter spacing */
+    --font__letter--spacing-plus : 6px;
+    --font__letter--spacing-minus : -1px;
 
     /* Size */
     --margin-botton : 70px;
@@ -61,22 +63,19 @@ li{
 
 /* Typography */
 
+/* 
 h1{
-    font-size : var(--font-medium);
-    font-weight: var(--weight-bold);
+    font-size: var(--font-large);
 } 
 
-h1 .font__change {
-
-}
 
 h2{
+    font-size: var(--font-medium);
 
-
-}
+} */
 
 h3{
-
+    font-size: var(--font-regular);
     font-family: 'Poiret One', cursive;
 
 }
@@ -86,6 +85,10 @@ button{
     border: none;
     color: var(--color__white);
     padding: 10px 20px;
+}
+button:hover{
+    background-color:var(--color__orange)
+
 }
 
 /* Navbar */
@@ -194,7 +197,7 @@ button{
     width: 600px;
     height: 300px;
     text-align: center;
-    padding: 40px;
+    padding: 10px 40px;
     border: 1px solid black;
     z-index: 3;
 }
@@ -218,6 +221,11 @@ button{
     width: 620px;
     height: 320px;
     z-index: 1;
+}
+
+.home__message h1 {
+    font-size: var(--font-medium);
+    letter-spacing: var(--font__letter--spacing)
 }
 
 .home__message h2{
@@ -268,14 +276,70 @@ button{
     background-color: var(--color__light-blue);
     margin-bottom: var(--margin-botton);
 }
-
 .section__container{
     width: 1000px;
     margin: 0 auto;
     padding: 50px 0;
     text-align: center;
 }
-
 #about .font__change{
+    font-size: var(--font-regular);
+    color: var(--color__white);
+}
+
+
+/* Introduction */
+
+#introduction{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--margin-botton);
+}
+
+
+.img__container{
+    background: url(./img/profile.jpeg) center/cover;
+    flex-basis: 50%;
+}
+
+.introduction__container{
+    background-color: var(--color__pink);
+    padding: 30px 50px;
+    flex-basis: 50%;
+    text-align: center;
+}
+
+.introduction__container-box{
+    margin: 0 auto;
+    max-width: 600px;
+}
+.introduction__container h1{
+    font-size: var(--font-large);
+    letter-spacing: var(--font__letter--spacing-plus) ;
+    color: var(--color__white);
+    margin-bottom: 10px;
+}
+
+.introduction__container h2{
+    display: inline-block;
+    padding: 0 10px;
+    font-size: var(--font-micro);
+    font-weight: var(--weight-regular);
+    letter-spacing: var(--font__letter--spacing-minus);
+    color: var(--color__white);
+    background-color: var(--color__dart-grey);
+    margin-bottom: 20px;
+}
+.introduction__container h3 {
+    font-size: var(--font-micro);
+    margin-bottom: 20px;
+}
+
+.introduction__container .font__change {
+    letter-spacing: var(--font__letter--spacing-plus);
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 30px;
     color: var(--color__white);
 }
