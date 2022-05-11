@@ -1,0 +1,161 @@
+    /* Global */
+:root {
+    /* Color */   
+    --color__white : #ffffff;
+    --color__pink :  #facfcf;
+    --color__light-blue :  #95cbca;
+    --color__yellow :  #ffcc5d;
+    --color__orange :  #ff9034;
+    --color__dart-grey :  #6d6d6d;
+    --color__black : #000000;
+      
+    /* Size */
+    
+
+    /* Font size */
+    --font-large : 48px;
+    --font-medium : 28px;
+    --font-regular : 18px;
+    --font-small : 16px;
+    --font-micro: 14px;
+
+    /* Font weigh */
+    --weight-bold: 800;
+    --weight-semi-bold: 600;
+    --weight-regular : 400;
+
+    /* Size */
+    /* --size-border-radius: 4px; */
+    
+    /* Animation */
+    --animation-duration: 250ms ;
+
+
+}
+
+
+/* Universal tags */
+
+*{
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    cursor: default;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+/* Typography */
+
+h1{
+    font-size : var(--font-large);
+    font-weight: var(--weight-bold);
+} 
+
+h2{
+
+
+}
+
+h3{
+
+
+}
+
+
+/* Navbar */
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 30px 30px;
+}
+
+.navbar__menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.navbar__item{
+    padding: 10px 10px;
+    font-size: var(--font-micro);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar__item:hover{
+    border: 1px solid #ff9034;
+    border-radius: 5px;
+}
+
+.navbar__logo{
+    position: absolute;
+    left: 50%;
+    transform: translate(-148px);
+}
+.navbar__logo-img{
+    cursor: pointer;
+}
+.navbar__sns{
+    display: flex;
+    flex-direction: row;
+    font-size: var(--font-medium);
+    justify-content: space-between;
+    width: 250px;
+    padding: 0;
+    margin: 30px 30px;
+
+}
+
+.navbar__icon{
+    background-color: var(--color__light-blue);
+    color: var(--color__white);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 41.8px;
+    border-radius: 50%;
+    transition: all var(--animation-duration) ease-in;
+}
+
+.navbar__icon:hover{
+    transform: scale(1.2);
+}
+
+.navbar__icon:nth-child(2){
+    background-color: var(--color__pink);
+}
+
+.navbar__icon:nth-child(3){
+    background-color: var(--color__yellow);
+}
+
+
+.navbar__icon:nth-child(4){
+    background-color: var(--color__orange);
+}
+
+.navbar__icon .icon{
+    cursor: pointer;
+}
+
+
+
+
