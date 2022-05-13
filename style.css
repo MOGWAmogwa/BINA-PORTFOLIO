@@ -485,6 +485,7 @@ input{
 #review{
     background-color: var(--color__light-blue);
     padding-bottom: 30px;
+    margin-bottom: var(--margin-botton)
 }
 
 .review{
@@ -538,5 +539,72 @@ input{
     text-align: justify;
     padding-left: 15px;
 }
+
+
+/* links */
+
+#links{
+    background: center/10% url(./img/Pattern.png);
+    padding-bottom: 30px;
+}
+.links{
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.links__title{
+    padding: 20px 0;
+    text-align: center;
+    color: var(--color__black);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: var(--weight-bold);
+    font-size: var(--font-regular);
+    letter-spacing: var(--font__letter--spacing-plus);
+}
+.links__img-container{ /*gallery*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    max-width: 1000px;
+}
+
+.links__img-container:nth-child(1){
+    flex-basis: 20%;
+}
+.links__img-container:nth-child(2){
+    flex-basis: 20%;
+}
+.links__img-container:nth-child(3){
+    flex-basis: 20%;
+}
+.links__img-container:nth-child(4){
+    flex-basis: 20%;
+}
+.links__img-container:nth-child(5){
+    flex-basis: 20%;
+}
+
+.album__container{ /*GL*/
+    display: flex;
+    width: 180px;
+    height:180px;
+    gap: 10px ;
+    border: 5px solid var(--color__white);
+    border-radius: 5px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;;
+}
+.album__container:hover{
+    transform: scale(1.1);
+    transition: all var(--animation-duration) ease-in;
+
+}
+
+.album{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 
