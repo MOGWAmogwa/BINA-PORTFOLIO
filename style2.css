@@ -13,6 +13,7 @@
 
 
     /* Font size */
+    --font-super-large : 48px;
     --font-large : 30px;
     --font-medium : 24px;
     --font-regular : 20px;
@@ -34,7 +35,7 @@
     /* --size-border-radius: 4px; */
     
     /* Animation */
-    --animation-duration: 0.3s ;
+    --animation-duration: 0.2s ;
 
 }
 
@@ -76,6 +77,12 @@ button{
     color: var(--color__white);
     border: transparent;
     padding: 10px;
+    transition: all var(--animation-duration) ease-in;
+
+}
+button:hover{
+    background-color: var(--color__hot-pink);
+    cursor: pointer;
 }
 
 /* Navbar */
@@ -255,4 +262,67 @@ button{
 
 button.about__btn a{
     color: var(--color__white);
+}
+
+/* Introduction */
+
+#introduction{
+    width: 100%;
+    height: 550px;
+    background-color: var(--color__pink);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+
+}
+.img__container{
+    flex-basis: 50%;
+}
+
+.img__container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.introduction__container{
+    padding: 20px 60px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.introduction__container h1{
+    text-align: center;
+    font-size: var(--font-super-large);
+    color: var(--color__white);
+    letter-spacing: var(--font__letter--spacing-plus);
+}
+
+.introduction__container h2{
+    color: var(--color__white);
+    background-color: var(--color__dart-grey);
+    padding: 5px 15px;
+    font-size: var(--font-small);
+}
+.introduction__container h3{
+    font-size: var(--font-small);
+}
+.introduction__container h3.font__change{
+    font-family: 'Work Sans', sans-serif;
+    color: var(--color__white);
+    letter-spacing: 3px;
+}
+button.introduction__btn{
+    background-color: var(--color__dart-grey);
+    color: var(--color__white);
+    padding: 8px 30px;
+    transition: all var(--animation-duration) ease-in;
+    cursor: pointer;
+}
+button.introduction__btn:hover{
+    background-color: var(--color__hot-pink);
 }
