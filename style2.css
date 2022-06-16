@@ -71,6 +71,13 @@ h2,h3{
     font-family: 'Poiret One', cursive;
 }
 
+button{
+    background-color: var(--color__dart-grey);
+    color: var(--color__white);
+    border: transparent;
+    padding: 10px;
+}
+
 /* Navbar */
 
 #navbar{
@@ -182,6 +189,7 @@ h2,h3{
     position: relative;
     background-color: white;
     padding: 20px 30px;
+    box-shadow: rgba(122, 117, 104, 0.192) 0px 0px 30px 0px;
 }
 
 .home__message::before{
@@ -218,11 +226,33 @@ h2,h3{
     width: 100%;
     height: 300px;
     background-color: var(--color__light-green);
+    margin-bottom: 80px;
 }
 
 .section__container{
-    margin: 0 auto;
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     height: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section__container h3{
+    font-size: var(--font-tiny);
+    font-weight: var(--weight-regular);
+}
+
+.section__container h2{
+    font-family: 'Work Sans', sans-serif;
+    color: var(--color__white);
+    font-size: var(--font-tiny);
+    font-weight: var(--weight-semi-bold);
+}
+
+button.about__btn a{
+    color: var(--color__white);
 }
