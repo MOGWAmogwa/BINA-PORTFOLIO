@@ -174,11 +174,25 @@ button:hover{
 }
 
 
+/* Toggle Button */
+
+.toggle__btn{
+    position: absolute;
+    top: 24%;
+    right: 5%;
+    outline: none;
+    background-color: transparent;
+    color: var(--color__orange);
+    font-size: var(--font-large);
+    display: none;
+
+}
+
 /* Home */
 
 #home{
     position: relative;
-    background: url(./img/bg_image.jpg) no-repeat center/cover; 
+    /* background: url(./img/bg_image.jpg) no-repeat center/cover;  */
     width: 100%;
     height: 600px;
     margin-bottom: var(--margin-botton);
@@ -249,12 +263,12 @@ button:hover{
 .orange{
     background-color: var(--color__light-orange);
     top: 60px;
-    left: -60px;
+    left: -120px;
 }
 
 .pink{
     background-color: var(--color__pink);
-    left: -210px;
+    left: -240px;
 }
 
 .person{
@@ -268,16 +282,16 @@ button:hover{
 
 
 
-
-
 /* About */
+
 #about{
     width: 100%;
     background-color: var(--color__light-blue);
     margin-bottom: var(--margin-botton);
 }
+
 .section__container{
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 50px 0;
     text-align: center;
@@ -286,6 +300,7 @@ button:hover{
     font-size: var(--font-regular);
     color: var(--color__white);
 }
+
 
 
 /* Introduction */
@@ -381,6 +396,7 @@ button:hover{
 .menual__item{
     text-align: center;
     width: 400px;
+    height: 500px;
     padding: 10px;
 
 }
@@ -607,4 +623,15 @@ input{
 }
 
 
+/* For below 768px screen width */
 
+@media screen and (max-width: 1400px){
+
+    :root{
+
+        
+    
+    } 
+
+
+}
