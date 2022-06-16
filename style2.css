@@ -7,7 +7,7 @@
     --color__pink :  #facfcf;
     --color__light-green :  #a7dab0;
     --color__yellow :  #ffe53e;
-    --color__light-yellow : rgb(253, 222, 127);
+    --color__hot-pink : rgb(247, 117, 86);
     --color__dart-grey :  #6d6d6d;
     --color__black : #000000;
 
@@ -97,7 +97,7 @@ h2,h3{
     transition: all var(--animation-duration) ease;
 }
 .navbar__item:hover{
-    border: 1px solid var(--color__light-yellow);
+    border: 1px solid var(--color__hot-pink);
     border-radius: 3px;
 }
 .navbar__item{
@@ -152,14 +152,15 @@ h2,h3{
 }
 
 .navbar__icon:nth-child(4){
-    background-color: var(--color__light-yellow);
+    background-color: var(--color__hot-pink);
 }
 
 
 /* Home */
 
 #home{
-    background-image: url(./img/bg_image.webp);
+    /* background-image: url(./img/bg_image.webp); */
+    background-image: url(./img/test.PNG);
     width: 100%;
     height: 600px;
     position: relative;
