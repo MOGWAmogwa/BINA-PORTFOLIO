@@ -663,7 +663,7 @@ button.category_btn:hover .category_count{
     color: var(--color__white);
 }
 
-#contact h1, #contact h2,.contact__links{
+#contact h1, #contact h2, .contact__links{
     text-shadow: var(--color-text-shadow);
 }
 
