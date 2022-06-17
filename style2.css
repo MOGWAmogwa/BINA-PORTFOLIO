@@ -15,6 +15,7 @@
     --color__dark-white : #bdbdbd;
     --color__bisque : rgba(255, 255, 255, 0.701);
     --color__blue-grey : #d1e7e6;
+    --color-text-shadow : 0px 0px 15px rgba(107, 107, 107, 0.4);
 
 
     /* Font size */
@@ -308,6 +309,7 @@ button.about__btn a{
 }
 
 .introduction__container h2{
+    font-weight: var(--font-regular);
     color: var(--color__white);
     background-color: var(--color__dart-grey);
     padding: 5px 15px;
@@ -315,8 +317,10 @@ button.about__btn a{
 }
 .introduction__container h3{
     font-size: var(--font-small);
+    font-weight: var(--weight-regular);
 }
 .introduction__container h3.font__change{
+    font-weight: var(--weight-bold);
     font-family: 'Work Sans', sans-serif;
     color: var(--color__white);
     letter-spacing: 3px;
@@ -408,6 +412,7 @@ h2.menual__title{
 h3.menual__description{
     font-size: var(--font-micro);
     flex-basis: 50%;
+    font-weight: var(--weight-regular);
 
 }
 
@@ -618,8 +623,8 @@ button.category_btn:hover .category_count{
     align-items: center;
 }
 
-.testimonial__speech-bubble p {
-    color: var(--color__dart-grey);
+.testimonial__speech-bubble h3 {
+    font-weight: var(--weight-regular);
 }
 .testimonial__speech-bubble a {
     font-size: var(--font-small);
@@ -631,33 +636,51 @@ button.category_btn:hover .category_count{
     font-family: 'Work Sans', sans-serif;
     font-size: var(--font-small);
     color: var(--color__white);
+    font-weight: var(--weight-bold);
 }
 
 /* Contact */
 
 #contact{
+    padding: 40px;
     background-color: var(--color__pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#contact h1,h2{
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 20px;
+}
+#contact h1{
+
+    font-size: var(--font-super-large);
 }
 
 .contact__title, .contact__email{
     color: var(--color__white);
 }
 
-.contact_rights{
-    color: var(--color__white);
+#contact h1,h2,.contact__links{
+    text-shadow: var(--color-text-shadow);
 }
 
-.contact__title, .contact__email, .contact_rights{
-    text-shadow: var(--color-box-shadow);
+.contact_rights{
+    color: var(--color__white);
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: var(--color-text-shadow);
 }
-.contact__links{
-    font-size: var(--font-large);
-    margin: 24px 0;
-  
+
+.contact__links i{
+    color: var(--color__white);
+    font-size: var(--font-super-large);
+    margin: 24px 10px;
 }
 
 .contact__links i:hover{
-    transform: scale(1.3);
+    transform: scale(1.2);
     color: var(--color__hot-pink);
     transition: all var(--animation-duration) ease-in;
 }
