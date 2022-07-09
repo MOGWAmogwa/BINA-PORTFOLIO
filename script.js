@@ -108,9 +108,66 @@ const boxesToCenter = (entries, observer) => {
   });
 };
 
+
+
 const boxesObserver = new IntersectionObserver(boxesToCenter, boxesOption);
 
 boxes.forEach((box) => boxesObserver.observe(box));
+
+
+
+
+
+
+
+
+/**hover가 되면 hover가 된 메뉴 아이템의 max-width에서 원상태의 width를 빼준 값 = x, x만큼 나머지 박스들이 오른쪽으로 이동 */
+
+// 이거 할때 색깔에 이름을 부여한다음에 
+
+/**const third = document.querySelector('#parent :nth-child(3)');
+console.log(third); // 👉️ div.child3
+
+const odd = document.querySelectorAll('#parent :nth-child(odd)');
+console.log(odd); // 👉️ [div.child1, div.child3] 
+
+이런식으로 nth 차일드를 불러서 위치를 변경시키는 게 더 나을듯 */
+
+boxes.forEach(box=>{
+  box.addEventListener('mouseover', (e)=>{
+
+    if(e.currentTarget.previousElementSibling==null){
+      const nextBox= e.currentTarget.nextElementSibling;
+      const originalWidth = e.currentTarget.nextElementSibling.getBoundingClientRect().width;
+      const scaledWidth = originalWidth*1.1
+      const x = scaledWidth-originalWidth;
+      nextBox.style.right = `${x}px`
+
+
+
+
+
+    }
+  })
+})
+
+
+//nextElementSibling
+//previousElementSibling
+//    console.log(e.currentTarget.previousElementSibling);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 1. 모든 섹션 요소들과 메뉴아이템을 가지고 온다.
 // 2. intersectionObserver를 이용해서 모든 섹션들을 관찰한다.

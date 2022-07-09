@@ -410,33 +410,35 @@ button.introduction__btn:hover{
     transition: all 800ms ease;
 }
 
+
 .menual__item.active{
     opacity: 1;
 }
-
-.menual__item.stop{
-    opacity: 1;
-}
-
-
-
-
 
 .menual__item:nth-child(1){
     background-color: var(--color__pink);
     position: relative;
     right: 200px;
+
 }
 
 .menual__item:nth-child(1).active{
     right: 0;
     transform: scale(1);
 }
+.menual__item:nth-child(1).active:hover{
+    transform: scale(1.1);
+    z-index:1;
+}
 .menual__item:nth-child(2){
     background-color: var(--color__light-green);
 }
 .menual__item:nth-child(2).active{
     transform: scale(1);
+}
+.menual__item:nth-child(2).active:hover{
+    transform: scale(1.1);
+    z-index:1;
 }
 .menual__item:nth-child(3){
     background-color: var(--color__pastel-yellow);
@@ -446,6 +448,10 @@ button.introduction__btn:hover{
 .menual__item:nth-child(3).active{
     transform: scale(1);
     left: 0;
+}
+.menual__item:nth-child(3).active:hover{
+    transform: scale(1.1);
+    z-index:1;
 }
  .menual__img-logo{
     display: flex;
