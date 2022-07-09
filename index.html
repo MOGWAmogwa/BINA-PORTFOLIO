@@ -20,7 +20,7 @@
 <body>
     <!-- Navbar -->
 
-    <section id="navbar">
+    <div id="navbar">
         <ul class="navbar__menu">
             <li class="navbar__item" data-home="home">HOME</li>
             <li class="navbar__item" data-link="#about">ABOUT</li>
@@ -31,14 +31,14 @@
         </ul>
         
         <div class="navbar__sns">
-            <a class="navbar__icon" href="#"><i class="fa-brands fa-instagram icon"></i></a>
+            <a class="navbar__icon" href="https://www.instagram.com/b__i__n__a__/"><i class="fa-brands fa-instagram icon"></i></a>
             <a class="navbar__icon" href="#"><i class="fa-solid fa-envelope icon"></i></a> 
             <a class="navbar__icon" href="#"><i class="fa-brands fa-facebook icon"></i></a> 
             <a class="navbar__icon" href="#"><i class="fa-brands fa-behance-square icon"></i></a> 
         </div>
 
         
-    </section>
+    </div>
 
 
         <div class="navbar__logo" >
@@ -50,10 +50,9 @@
         </div>
 
 
-
     <!-- Home -->
 
-    <section id="home">
+    <section id="home" data-section="home-section">
         
              <div class="home__message">
                 <h1>INTERESTED IN GROWING YOUR BUSINESS?</h1>
@@ -64,23 +63,26 @@
 
     </section>
 
+
     <!-- About -->
 
-    <section id="about">
+    <section id="about" data-section="about-section">
         <section class="container">
-            <h3>Design is way more than just looking pretty. Creating a consistent brand for your business that shows its individual style and story is essential. </h3>
+            <h3 class="text">Design is way more than just looking pretty. Creating a consistent brand for your business that shows its individual style and story is essential. </h3>
             <br>
-            <h3>I take the time to understand the unique qualities of your business and bring this individuality to life with heartfelt designs. I often incorporate elements like hand-drawn fonts and illustrations to give your business that extra unique edge it needs to stand out and tell your customers exactly who you are and what you’re here to do. </h3>
-            <br>
-            <h2 class="font__change">READY TO TURN SOME HEADS?</h2>
-            <br>
-            <button class="about__btn"><a href="#">SEE MY RESUME</a></button>
+            <h3 class="text">I take the time to understand the unique qualities of your business and bring this individuality to life with heartfelt designs. I often incorporate elements like hand-drawn fonts and illustrations to give your business that extra unique edge it needs to stand out and tell your customers exactly who you are and what you’re here to do. </h3>
+            <br class="text">
+            <h2 class="text font__change" >READY TO TURN SOME HEADS?</h2>
+            <br class="text">
+            <button class="text about__btn" ><a href="#">SEE MY RESUME</a></button>
         </section>
     </section>
 
+
+
     <!-- Introduction -->
 
-    <section id="introduction">
+    <section id="introduction" data-section="introduction-section">
         <div class="img__container">
             <img 
                 src="./img/profile.jpeg" 
@@ -111,8 +113,8 @@
 
     <!-- Menual -->
 
-    <section id="menual">
-            <div class="menual__container">
+    <section id="menual" data-section="menual-section">
+            <div class="menual__container" >
                 <div class="menual__item">
                     <div class="menual__img-logo ">
                         <i class="fa-solid fa-lightbulb"></i>
@@ -150,7 +152,7 @@
     </section>
 
      <!-- Work -->
-     <section id="work" class="section">
+     <section id="work" class="section" data-section="work-section">
         <div class="work__categories">
             <button class="category_btn selected" data-filter="*">
                 All<span class="category_count">8</span></button>
@@ -374,7 +376,7 @@
         </div> -->
 
         <!-- Testimonials -->
-    <section id="testimonials" class="section">
+    <section id="testimonials" class="section" data-section="testimonials-section">
         <div class="section__container">
         <h1>See what they say about me</h1>
         <div class="testimonials">
@@ -423,7 +425,7 @@
 
         
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" data-section="contact-section">
         <h1 class="contact__title">Let's talk</h1>
         <h2 class="contact__email">hongbin9696@gmail.com</h2>
         <div class="contact__links">
