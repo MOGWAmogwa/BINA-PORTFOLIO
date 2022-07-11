@@ -116,40 +116,75 @@ boxes.forEach((box) => boxesObserver.observe(box));
 
 
 
+// 🥕 hover 가 되면 hover 된 메뉴 아이템의 width에서 원상태의 width를 빼준 값 x 만큼 나머지 박스들이 이동하고, hover 상태가 끝나면 다시 원상태로 돌아오는 기능 구현
 
-
-
-
-
-/**hover가 되면 hover가 된 메뉴 아이템의 max-width에서 원상태의 width를 빼준 값 = x, x만큼 나머지 박스들이 오른쪽으로 이동 */
-
-// 이거 할때 색깔에 이름을 부여한다음에 
-
-/**const third = document.querySelector('#parent :nth-child(3)');
-console.log(third); // 👉️ div.child3
-
-const odd = document.querySelectorAll('#parent :nth-child(odd)');
-console.log(odd); // 👉️ [div.child1, div.child3] 
-
-이런식으로 nth 차일드를 불러서 위치를 변경시키는 게 더 나을듯 */
 
 boxes.forEach(box=>{
   box.addEventListener('mouseover', (e)=>{
 
-    if(e.currentTarget.previousElementSibling==null){
-      const nextBox= e.currentTarget.nextElementSibling;
-      const originalWidth = e.currentTarget.nextElementSibling.getBoundingClientRect().width;
-      const scaledWidth = originalWidth*1.1
-      const x = scaledWidth-originalWidth;
-      nextBox.style.right = `${x}px`
+    // if(e.currentTarget.previousElementSibling==null){
+    //   const pinkNextBox= e.currentTarget.nextElementSibling.dataset.color;
+    //   const green = document.querySelector(`${pinkNextBox}`);
+    //   green.style.left='10px'
+    // }
+    // const greenNextBox = e.currentTarget.nextElementSibling.dataset.color;
+    // const yellow =  document.querySelector(`${greenNextBox}`)
+    // yellow.style.left = '10px'
 
+    let hoveredBox = e.currentTarget.dataset.color;
+    const greenBox = document.querySelector('.green.active');
+    const yellowBox = document.querySelector('.yellow.active');
+    const pinkBox = document.querySelector('.pink.active');
+    switch(true){
+      case hoveredBox == '.pink.active':
+        yellowBox.style.left = '10px'
+        greenBox.style.left = '10px'
+        break
+      case hoveredBox == '.green.active':
+        yellowBox.style.left = '10px'
+        pinkBox.style.right = '10px'
 
-
-
-
+        break
+      case hoveredBox == '.yellow.active':
+        pinkBox.style.right = '10px'
+        greenBox.style.left = '-10px'
+        break
     }
+
   })
 })
+
+
+boxes.forEach(box=>{
+  box.addEventListener('mouseleave', (e)=>{
+
+
+    let hoveredBox = e.currentTarget.dataset.color;
+    const greenBox = document.querySelector('.green.active');
+    const yellowBox = document.querySelector('.yellow.active');
+    const pinkBox = document.querySelector('.pink.active');
+    switch(true){
+      case hoveredBox == '.pink.active':
+        yellowBox.style.left = '0px'
+        greenBox.style.left = '0px'
+        break
+      case hoveredBox == '.green.active':
+        yellowBox.style.left = '0px'
+        pinkBox.style.right = '0px'
+
+        break
+      case hoveredBox == '.yellow.active':
+        pinkBox.style.right = '0px'
+        greenBox.style.left = '0px'
+        break
+    }
+
+  })
+})
+
+
+
+
 
 
 //nextElementSibling

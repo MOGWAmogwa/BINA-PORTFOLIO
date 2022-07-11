@@ -180,11 +180,10 @@ button:hover{
     transform: scale(1.2);
 }
 
-.navbar__icon:nth-child(2){
-    background-color: var(--color__pink);
+.navbar__icon.green{.    background-color: var(--color__pink);
 }
 
-.navbar__icon:nth-child(3){
+.navbar__icon.yellow{
     background-color: var(--color__yellow);
 }
 
@@ -407,7 +406,7 @@ button.introduction__btn:hover{
     flex-basis: 40%;
     transform: scale(1.6);
     opacity: 0;
-    transition: all 800ms ease;
+    transition: all 500ms ease;
 }
 
 
@@ -415,41 +414,46 @@ button.introduction__btn:hover{
     opacity: 1;
 }
 
-.menual__item:nth-child(1){
+.menual__item.pink{
     background-color: var(--color__pink);
     position: relative;
     right: 200px;
-
 }
 
-.menual__item:nth-child(1).active{
+.menual__item.pink.active{
     right: 0;
     transform: scale(1);
 }
-.menual__item:nth-child(1).active:hover{
+.menual__item.pink.active:hover{
     transform: scale(1.1);
     z-index:1;
 }
-.menual__item:nth-child(2){
+.menual__item.green{
+    position: relative;
     background-color: var(--color__light-green);
+    right: 50px;
 }
-.menual__item:nth-child(2).active{
+.menual__item.green.active{
     transform: scale(1);
+    left: 0px;
 }
-.menual__item:nth-child(2).active:hover{
+.menual__item.green.active:hover{
     transform: scale(1.1);
     z-index:1;
 }
-.menual__item:nth-child(3){
+.menual__item.yellow{
     background-color: var(--color__pastel-yellow);
     position: relative;
     left: 200px;
 }
-.menual__item:nth-child(3).active{
+
+
+
+.menual__item.yellow.active{
     transform: scale(1);
     left: 0;
 }
-.menual__item:nth-child(3).active:hover{
+.menual__item.yellow.active:hover{
     transform: scale(1.1);
     z-index:1;
 }
@@ -469,11 +473,11 @@ button.introduction__btn:hover{
     color: var(--color__pink);
 }
 
-.menual__item:nth-child(2) .menual__img-logo i{
+.menual__item.green .menual__img-logo i{
     color: var(--color__light-green);
 }
 
-.menual__item:nth-child(3) .menual__img-logo i{
+.menual__item.yellow .menual__img-logo i{
     color: var(--color__pastel-yellow);
 }
 
