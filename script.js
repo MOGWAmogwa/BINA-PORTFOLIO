@@ -136,7 +136,7 @@ boxes.forEach(box=>{
     const yellowBox = document.querySelector('.yellow.active');
     const pinkBox = document.querySelector('.pink.active');
     switch(true){
-      case hoveredBox == '.pink.active':
+      case hoveredBox == '.pink.active':  
         yellowBox.style.left = '10px'
         greenBox.style.left = '10px'
         break
@@ -181,6 +181,43 @@ boxes.forEach(box=>{
 
   })
 })
+
+const workProjectsContainer = document.querySelector('.work__projects-container');
+const modalCloseBtn = document.querySelector('.modal-close');
+let isModalPopUp = false;
+
+boxes.forEach(box=>{
+  box.addEventListener('click', (e)=>{
+    isModalPopUp =true
+    navbar.style.display = "none"
+    workProjectsContainer.classList.add('open');
+    modalCloseBtn.classList.add('open');
+
+  })
+})
+
+modalCloseBtn.addEventListener('click', (e)=>{
+
+  workProjectsContainer.classList.remove('open');
+  modalCloseBtn.classList.remove('open');
+  navbar.style.display = "flex"
+  isModalPopUp =false
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

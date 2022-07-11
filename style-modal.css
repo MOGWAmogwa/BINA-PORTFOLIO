@@ -519,10 +519,6 @@ h3.menual__description{
     align-items: center;
     margin-bottom: 80px;
 }
-.section__container{
-    width: 100%;
-    max-width: 1200px;
-}
 
 .work__categories{
     margin: 40px 0;
@@ -564,10 +560,51 @@ button.category_btn:hover .category_count{
     transition: all var(--animation-duration) ease-in;
 }
 
+button.modal-close{
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background-color: transparent;
+    color: var(--color__hot-pink);
+    font-size: 48px;
+    z-index: 2;
+}
+button.modal-close.open{
+    display: block;
+}
+button.modal-close:hover{
+    transform: scale(1.1);
+}
+button.modal-close i {
+    cursor: pointer;
+}
+
+.work__projects-container{
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgba(201, 188, 188, 0.852);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+    overflow-y: hidden;
+    
+}
+
+.work__projects-container.open{
+    display: flex;
+}
 
 .work__projects{
     display: flex;
     width: 100%;
+    max-width: 1200px;
     flex-wrap: wrap;
     justify-content: center;
     opacity: 1;
