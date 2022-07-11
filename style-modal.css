@@ -601,6 +601,10 @@ button.modal-close i {
     display: flex;
 }
 
+.lock{
+    overflow: hidden;
+}
+
 .work__projects{
     display: flex;
     width: 100%;
@@ -704,6 +708,7 @@ button.modal-close i {
 .testimonials__container{
     width: 100%;
     max-width: 1200px;
+
 }
 
 .testimonials{

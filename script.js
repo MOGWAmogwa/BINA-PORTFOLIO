@@ -184,28 +184,28 @@ boxes.forEach(box=>{
 
 const workProjectsContainer = document.querySelector('.work__projects-container');
 const modalCloseBtn = document.querySelector('.modal-close');
-let isModalPopUp = false;
+const body = document.querySelector('body');
+
+
 
 boxes.forEach(box=>{
   box.addEventListener('click', (e)=>{
-    isModalPopUp =true
     navbar.style.display = "none"
     workProjectsContainer.classList.add('open');
     modalCloseBtn.classList.add('open');
+    body.classList.add('lock')
 
   })
 })
 
 modalCloseBtn.addEventListener('click', (e)=>{
-
   workProjectsContainer.classList.remove('open');
   modalCloseBtn.classList.remove('open');
   navbar.style.display = "flex"
-  isModalPopUp =false
+  body.classList.remove('lock')
+
 
 })
-
-
 
 
 
