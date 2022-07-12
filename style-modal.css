@@ -98,20 +98,19 @@ button:hover{
     top: 0;
     width: 100%;
     height: 50px;
-    background-color: var(--color__white);
-    display: flex;
+    background-color: rgba(255, 255, 255, 0.379);
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 0 30px;
-    border-bottom: 2px dotted var(--color__pink);
     z-index: 2;
 }
 
-#navbar.navbar__border-transparent{
-    border-bottom: 2px transparent;
-    background-color: rgba(255, 255, 255, 0.379);
+
+#navbar.navbar__open{
+    display: flex;
 }
 
 .navbar__menu{
@@ -126,6 +125,7 @@ button:hover{
     cursor: pointer;
     transition: all var(--animation-duration) ease;
 }
+
 .navbar__item:hover{
     background-color: var(--color__pink);
     color: var(--color__white);
@@ -135,19 +135,44 @@ button:hover{
     padding: 10px 10px;
 }
 
+
+
+/* All Section Container */
+
+/* .all-section-container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+
+
+}
+section.viewport{
+    height: 100vh;
+    scroll-snap-align: start;
+} */
+
+.all-section-container{
+    height: 100vh;
+}
+
+.viewport{
+    height: 100vh;
+}
+
 .navbar__logo{
-    display: flex;
-    justify-content: center; 
-    margin: 80px 0;
-    margin-bottom: 50px;
-    transition: all var(--animation-duration) ease;
+    width: 100%;
+    height: 100%;
+
 }
-.navbar__logo:hover{
-    transform: scale(1.05);
+
+.navbar__logo .navbar__logo-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top -400px right 0;
+
 }
-.navbar__logo img{
-    cursor: pointer;
-}
+
 
 
 
@@ -193,16 +218,12 @@ button:hover{
 }
 
 
-
 /* Home */
 
 #home{
     /* background-image: url(./img/bg_image.webp); */
     background-image: url(./img/test.PNG);
-    width: 100%;
-    height: 640px;
     position: relative;
-    margin-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -255,10 +276,8 @@ button:hover{
 /* About */
 
 #about{
-    width: 100%;
-    height: 300px;
     background-color: var(--color__light-green);
-    margin-bottom: 80px;
+
 }
 
 .container{
@@ -269,7 +288,7 @@ button:hover{
     padding: 30px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -294,7 +313,7 @@ button.about__btn a{
 
 .text{
     opacity: 0;
-    transition: all 500ms ease;
+    transition: all 800ms ease;
     position: relative;
     top: 100px;
 }
@@ -309,8 +328,6 @@ button.about__btn a{
 /* Introduction */
 
 #introduction{
-    width: 100%;
-    height: 550px;
     background-color: var(--color__pink);
     display: flex;
     flex-direction: row;
@@ -376,8 +393,6 @@ button.introduction__btn:hover{
 /* Menual */
 
 #menual{
-    width: 100%;
-    height: 600px;
     background-image: url(./img/bg-line.PNG);
     display: flex;
     flex-direction: row;
@@ -779,7 +794,7 @@ button.modal-close i {
     background-color: var(--color__pink);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 #contact h1,h2{

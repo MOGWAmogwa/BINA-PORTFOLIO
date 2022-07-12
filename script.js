@@ -1,47 +1,40 @@
-// 🥕 클릭하면 해당 카테고리 화면으로 이동!
+"use strict";
 
-const navbarMenu = document.querySelector(".navbar__menu");
-navbarMenu.addEventListener("click", (e) => {
-  const target = e.target;
-  const link = target.dataset.link;
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-});
 
-const homeLink = document.querySelector("[data-home]");
-homeLink.addEventListener("click", (e) => {
-  window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-});
+// const mainLink = document.querySelector("#main");
+// mainLink.addEventListener("click", (e) => {
+//   window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+// });
 
 // 🥕 Navbar 투명효과
 
-const repeat = (tagName, height, number) => {
-  if (window.scrollY > height / number) {
-    tagName.style.opacity = `${1 - window.scrollY / height}`;
-  } else {
-    tagName.style.opacity = 1;
-  }
-};
+// const repeat = (tagName, height, number) => {
+//   if (window.scrollY > height / number) {
+//     tagName.style.opacity = `${1 - window.scrollY / height}`;
+//   } else {
+//     tagName.style.opacity = 1;
+//   }
+// };
 
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
-const navbarLogo = document.querySelector(".navbar__logo");
-const navabarLogoHeight = navbarLogo.getBoundingClientRect().height;
-const home = document.querySelector("#home");
-const homeHeight = home.getBoundingClientRect().height;
-const wholeHeight = navbarHeight + homeHeight + navabarLogoHeight;
+// const navbarLogo = document.querySelector(".navbar__logo");
+// const navabarLogoHeight = navbarLogo.getBoundingClientRect().height;
+// const home = document.querySelector("#home");
+// const homeHeight = home.getBoundingClientRect().height;
+// const wholeHeight = navbarHeight + homeHeight + navabarLogoHeight;
 
-document.addEventListener("scroll", () => {
-  repeat(home, wholeHeight, 1.3);
-});
+// document.addEventListener("scroll", () => {
+//   repeat(home, wholeHeight, 1.3);
+// });
 
 // 🥕 스크롤 하면 navbar 하단 border 없애기
 
 document.addEventListener("scroll", (e) => {
   if (window.scrollY > navbarHeight) {
-    navbar.classList.add("navbar__border-transparent");
+    navbar.classList.add("navbar__open");
   } else {
-    navbar.classList.remove("navbar__border-transparent");
+    navbar.classList.remove("navbar__open");
   }
 });
 
@@ -56,7 +49,6 @@ document.addEventListener("scroll", (e) => {
 
 const text = document.querySelectorAll(".text");
 
-
 // ❓스크롤을 아래에서 위로 올렸을 때 버벅거림 없애기 ➡️ 슬랙에 질문하기!
 // ✅ 없애긴 없앴으나 뭔가 엉성쓰
 
@@ -66,19 +58,12 @@ const textOption = {
   threshold: 0.9, // 0~1
 };
 
-
-const textUp = (entries, observer) => {
+const textUp = (entries, textObserver) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
-      // if(Math.abs(entry.boundingClientRect.y)<300){
-      //   entry.target.style.top = "0px"
-      // }
-      
     } else {
-
-      return;
-      
+      entry.target.classList.remove("active");
     }
   });
 };
@@ -97,149 +82,178 @@ const boxesOption = {
   threshold: 0.5, // 0~1
 };
 
-const boxesToCenter = (entries, observer) => {
+const boxesToCenter = (entries, boxesObserver) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
-
     } else {
       return;
     }
   });
 };
 
-
-
 const boxesObserver = new IntersectionObserver(boxesToCenter, boxesOption);
 
 boxes.forEach((box) => boxesObserver.observe(box));
 
-
-
 // 🥕 hover 가 되면 hover 된 메뉴 아이템의 width에서 원상태의 width를 빼준 값 x 만큼 나머지 박스들이 이동하고, hover 상태가 끝나면 다시 원상태로 돌아오는 기능 구현
 
-
-boxes.forEach(box=>{
-  box.addEventListener('mouseover', (e)=>{
-
-    // if(e.currentTarget.previousElementSibling==null){
-    //   const pinkNextBox= e.currentTarget.nextElementSibling.dataset.color;
-    //   const green = document.querySelector(`${pinkNextBox}`);
-    //   green.style.left='10px'
-    // }
-    // const greenNextBox = e.currentTarget.nextElementSibling.dataset.color;
-    // const yellow =  document.querySelector(`${greenNextBox}`)
-    // yellow.style.left = '10px'
-
+boxes.forEach((box) => {
+  box.addEventListener("mouseover", (e) => {
     let hoveredBox = e.currentTarget.dataset.color;
-    const greenBox = document.querySelector('.green.active');
-    const yellowBox = document.querySelector('.yellow.active');
-    const pinkBox = document.querySelector('.pink.active');
-    switch(true){
-      case hoveredBox == '.pink.active':  
-        yellowBox.style.left = '10px'
-        greenBox.style.left = '10px'
-        break
-      case hoveredBox == '.green.active':
-        yellowBox.style.left = '10px'
-        pinkBox.style.right = '10px'
+    const greenBox = document.querySelector(".green.active");
+    const yellowBox = document.querySelector(".yellow.active");
+    const pinkBox = document.querySelector(".pink.active");
+    switch (true) {
+      case hoveredBox == ".pink.active":
+        yellowBox.style.left = "10px";
+        greenBox.style.left = "10px";
+        break;
+      case hoveredBox == ".green.active":
+        yellowBox.style.left = "10px";
+        pinkBox.style.right = "10px";
 
-        break
-      case hoveredBox == '.yellow.active':
-        pinkBox.style.right = '10px'
-        greenBox.style.left = '-10px'
-        break
+        break;
+      case hoveredBox == ".yellow.active":
+        pinkBox.style.right = "10px";
+        greenBox.style.left = "-10px";
+        break;
     }
+  });
+});
 
-  })
-})
-
-
-boxes.forEach(box=>{
-  box.addEventListener('mouseleave', (e)=>{
-
-
+boxes.forEach((box) => {
+  box.addEventListener("mouseleave", (e) => {
     let hoveredBox = e.currentTarget.dataset.color;
-    const greenBox = document.querySelector('.green.active');
-    const yellowBox = document.querySelector('.yellow.active');
-    const pinkBox = document.querySelector('.pink.active');
-    switch(true){
-      case hoveredBox == '.pink.active':
-        yellowBox.style.left = '0px'
-        greenBox.style.left = '0px'
-        break
-      case hoveredBox == '.green.active':
-        yellowBox.style.left = '0px'
-        pinkBox.style.right = '0px'
+    const greenBox = document.querySelector(".green.active");
+    const yellowBox = document.querySelector(".yellow.active");
+    const pinkBox = document.querySelector(".pink.active");
+    switch (true) {
+      case hoveredBox == ".pink.active":
+        yellowBox.style.left = "0px";
+        greenBox.style.left = "0px";
+        break;
+      case hoveredBox == ".green.active":
+        yellowBox.style.left = "0px";
+        pinkBox.style.right = "0px";
 
-        break
-      case hoveredBox == '.yellow.active':
-        pinkBox.style.right = '0px'
-        greenBox.style.left = '0px'
-        break
+        break;
+      case hoveredBox == ".yellow.active":
+        pinkBox.style.right = "0px";
+        greenBox.style.left = "0px";
+        break;
     }
+  });
+});
 
-  })
-})
+const workProjectsContainer = document.querySelector(
+  ".work__projects-container"
+);
+const modalCloseBtn = document.querySelector(".modal-close");
+const body = document.querySelector("body");
 
-const workProjectsContainer = document.querySelector('.work__projects-container');
-const modalCloseBtn = document.querySelector('.modal-close');
-const body = document.querySelector('body');
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    navbar.style.display = "none";
+    workProjectsContainer.classList.add("open");
+    modalCloseBtn.classList.add("open");
+    body.classList.add("lock");
+  });
+});
+
+modalCloseBtn.addEventListener("click", (e) => {
+  workProjectsContainer.classList.remove("open");
+  modalCloseBtn.classList.remove("open");
+  navbar.style.display = "flex";
+  body.classList.remove("lock");
+});
+
+// 🥕 스크롤을 하면 smooth하게 페이지가 전체화면으로 보이게끔 만들기
+
+// const viewport = document.querySelectorAll('.viewport');
+
+// const viewportOption = {
+//   root : null,
+//   rootMargin : "0px 0px 300px 0px",
+//   threshold : 0.2,
+// };
+
+// const viewportScroll = (entries, viewportObserver) =>{
+//   entries.forEach(entry =>{
+//     if(!entry.isIntersecting){
+//       entry.target.nextElementSibling.scrollIntoView({behavior : 'smooth'})
+//     } else {
+
+//     }
+//   })
+// };
+
+// const viewportObserver = new IntersectionObserver(viewportScroll, viewportOption)
+
+// viewport.forEach(v => viewportObserver.observe(v))
+
+const sectionIds = [
+  "#main",
+  "#home",
+  "#about",
+  "#introduction",
+  "#menual",
+  "#testimonials",
+  "#contact",
+];
+
+const sectionOption = {
+  root: null,
+  rootMargin: "0px 0px 600px 0px",
+  threshold: 0.9,
+};
+const section = sectionIds.map((sectionId) =>
+  document.querySelector(sectionId)
+);
 
 
 
-boxes.forEach(box=>{
-  box.addEventListener('click', (e)=>{
-    navbar.style.display = "none"
-    workProjectsContainer.classList.add('open');
-    modalCloseBtn.classList.add('open');
-    body.classList.add('lock')
 
-  })
-})
+const sectionScroll = (entries, sectionObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
 
-modalCloseBtn.addEventListener('click', (e)=>{
-  workProjectsContainer.classList.remove('open');
-  modalCloseBtn.classList.remove('open');
-  navbar.style.display = "flex"
-  body.classList.remove('lock')
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      let selectedIndex; // 현재 section index
+      if (entry.boundingClientRect.y < 0) {
+      // 현재 section이 살짝 화면밖으로 나가는 순간 다음 section을 화면에 불러옴
+        selectedIndex = index + 1 ; // 다음에 불러올 section의 index
+        console.log(sectionIds[selectedIndex]); 
+        document.querySelector(`${sectionIds[selectedIndex]}`).scrollIntoView({behavior : 'smooth'})
+      } 
 
+    } 
+  });
+};
 
-})
+const sectionObserver = new IntersectionObserver(sectionScroll, sectionOption);
 
+section.forEach((s) => sectionObserver.observe(s));
 
+// 🥕 클릭하면 해당 카테고리 화면으로 이동!
 
+// ❓두개가 연동되어 움직이는 오류
+// 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
 
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (e) => {
+  const target = e.target;
+  const link = target.dataset.link;
+  const scrollTo = document.querySelector(link)
 
+  scrollTo.scrollIntoView({ behavior: "smooth" });
 
-
-
-
-
-
-
-
-
-
-
+});
 
 
 //nextElementSibling
 //previousElementSibling
 //    console.log(e.currentTarget.previousElementSibling);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 1. 모든 섹션 요소들과 메뉴아이템을 가지고 온다.
 // 2. intersectionObserver를 이용해서 모든 섹션들을 관찰한다.
