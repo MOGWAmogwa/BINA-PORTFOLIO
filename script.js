@@ -317,7 +317,7 @@ boxes.forEach((box) => {
 
 
 
-// 🥕 navbar열기
+// // 🥕 navbar열기
 
 // const navbar = document.querySelector("#navbar");
 // const navbarHeight = navbar.getBoundingClientRect().height;
@@ -332,7 +332,7 @@ boxes.forEach((box) => {
 
 
 
-// 🥕 modal
+// // 🥕 modal
 
 // const workProjectsContainer = document.querySelector(
 //   ".work__projects-container"
@@ -357,10 +357,10 @@ boxes.forEach((box) => {
 // });
 
 
-// 🥕 클릭하면 해당 카테고리 화면으로 이동!
+// // 🥕 클릭하면 해당 카테고리 화면으로 이동!
 
-// ❓두개가 연동되어 움직이는 오류
-// 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
+// // ❓두개가 연동되어 움직이는 오류
+// // 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
 
 // const navbarMenu = document.querySelector(".navbar__menu");
 // navbarMenu.addEventListener("click", (e) => {
