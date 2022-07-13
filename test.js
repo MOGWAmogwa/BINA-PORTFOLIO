@@ -155,8 +155,9 @@ navbarMenu.addEventListener("click", (e) => {
   const link = target.dataset.link;
   const scrollTo = document.querySelector(link)
   scrollTo.scrollIntoView({ behavior: "smooth" });
-
 });
+
+
 
 
 

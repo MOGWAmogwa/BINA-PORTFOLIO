@@ -582,6 +582,7 @@ h3.menual__description{
 }
 
 .testimonial__speech-bubble h3 {
+    font-size: var(--font-tiny);
     font-weight: var(--weight-regular);
 }
 .testimonial__speech-bubble a {
@@ -613,7 +614,6 @@ h3.menual__description{
     margin-bottom: 20px;
 }
 #contact h1{
-
     font-size: var(--font-super-large);
 }
 
@@ -621,11 +621,15 @@ h3.menual__description{
     color: var(--color__white);
 }
 
+.contact__email{
+    font-size: var(--font-medium);
+}
 #contact h1, #contact h2, .contact__links{
     text-shadow: var(--color-text-shadow);
 }
 
 .contact_rights{
+    font-size: var(--font-micro);
     color: var(--color__white);
     font-family: 'Work Sans', sans-serif;
     text-shadow: var(--color-text-shadow);
@@ -645,7 +649,7 @@ h3.menual__description{
 
 
 
-/* Work */
+/* Modal / Work */
 
 #work{
     background-color: var(--color__blue-grey);
