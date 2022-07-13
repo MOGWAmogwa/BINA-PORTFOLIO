@@ -106,6 +106,61 @@ boxes.forEach((box) => {
 });
 
 
+// 🥕 modal
+
+const workProjectsContainer = document.querySelector(
+  ".work__projects-container"
+);
+const modalCloseBtn = document.querySelector(".modal-close");
+const body = document.querySelector("body");
+
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    navbar.style.display = "none";
+    workProjectsContainer.classList.add("open");
+    modalCloseBtn.classList.add("open");
+    body.classList.add("lock");
+  });
+});
+
+modalCloseBtn.addEventListener("click", (e) => {
+  workProjectsContainer.classList.remove("open");
+  modalCloseBtn.classList.remove("open");
+  navbar.style.display = "flex";
+  body.classList.remove("lock");
+});
+
+
+
+// 🥕 navbar열기
+
+const navbar = document.querySelector("#navbar");
+const navbarHeight = navbar.getBoundingClientRect().height;
+
+document.addEventListener("scroll", (e) => {
+  if (window.scrollY > navbarHeight) {
+    navbar.classList.add("navbar__open");
+  } else {
+    navbar.classList.remove("navbar__open");
+  }
+});
+// 🥕 클릭하면 해당 카테고리 화면으로 이동!
+
+// ❓두개가 연동되어 움직이는 오류
+// 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
+
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (e) => {
+  const target = e.target;
+  const link = target.dataset.link;
+  const scrollTo = document.querySelector(link)
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+
+});
+
+
+
+
 
 // 🥕 javascript section 이동
 window.onload = function () {
