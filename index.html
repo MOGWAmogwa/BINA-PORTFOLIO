@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="style-modal.css">
+    <link rel="stylesheet" href="./fullpageJS/fullpage.min.css">
+    <script src="./fullpageJS/fullpage.min.js"></script>
+
 
 
 </head>
@@ -44,9 +47,9 @@
 
     </div>
 
-    <div class="all-section-container">
+    <div id="full-page">
 
-        <section class="viewport" id="main">
+        <section class="section" id="main">
             <div class="navbar__logo">
                 <img src="./img/replace.png" alt="ALPO" class="navbar__logo-img">
             </div>
@@ -56,7 +59,7 @@
 
         <!-- Home -->
 
-        <section class="viewport" id="home">
+        <section class="section" id="home">
 
             <div class="home__message">
                 <h1>INTERESTED IN GROWING YOUR BUSINESS?</h1>
@@ -71,7 +74,7 @@
 
         <!-- About -->
 
-        <section class="viewport" id="about" >
+        <section class="section" id="about" >
             <section class="container">
                 <h3 class="text">Design is way more than just looking pretty. Creating a consistent brand for your
                     business that shows its individual style and story is essential. </h3>
@@ -91,38 +94,41 @@
 
         <!-- Introduction -->
 
-        <section class="viewport" id="introduction">
-            <div class="img__container">
-                <img src="./img/profile.jpeg" alt="" class="avatar">
+        <section class="section" id="introduction">
+            <div class="intro-section__container">
+                <div class="img__container">
+                    <img src="./img/profile.webp" alt="" class="avatar">
+                </div>
+                <div class="introduction__container">
+                    <h1>WHO AM I?</h1>
+                    <h2>BRANDING SPECIALIST, ENTERTAINMENT, ALL ROUND BOSS LADY</h2>
+                    <h3>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. nostrum sit sint, unde repellendus.
+                        Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!br
+                        <br><br>
+                        Laudantium id ducimus reprehenderit ipsam suscipit minima facere.
+                        <br><br>
+                        Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!
+                        <br><br>
+                        nostrum sit sint, unde repellendus. Consectetur atque sapiente nobis. Recusandae dolorum quis
+                        explicabo impedit!
+                        <br><br>
+                        ipsum dolor sit amet consectetur, Consectetur atque sapiente nobis. Recusandae dolorum quis
+                        explicabo impedit.
+    
+                    </h3>
+                    <h3 class="font__change">WHAT DO I OFFER? TAKE A LOOK.</h3>
+                    <button class="introduction__btn">Click!</button>
+    
+                </div>
             </div>
-            <div class="introduction__container">
-                <h1>WHO AM I?</h1>
-                <h2>BRANDING SPECIALIST, ENTERTAINMENT, ALL ROUND BOSS LADY</h2>
-                <h3>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. nostrum sit sint, unde repellendus.
-                    Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!br
-                    <br><br>
-                    Laudantium id ducimus reprehenderit ipsam suscipit minima facere.
-                    <br><br>
-                    Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!
-                    <br><br>
-                    nostrum sit sint, unde repellendus. Consectetur atque sapiente nobis. Recusandae dolorum quis
-                    explicabo impedit!
-                    <br><br>
-                    ipsum dolor sit amet consectetur, Consectetur atque sapiente nobis. Recusandae dolorum quis
-                    explicabo impedit.
-
-                </h3>
-                <h3 class="font__change">WHAT DO I OFFER? TAKE A LOOK.</h3>
-                <button class="introduction__btn">Click!</button>
-
-            </div>
+            
         </section>
 
 
         <!-- Menual -->
 
-        <section class="viewport" id="menual">
+        <section class="section" id="menual">
             <div class="menual__container">
                 <div class="menual__item pink" data-color=".pink.active">
                     <div class="menual__img-logo ">
@@ -462,7 +468,7 @@
             </div> -->
 
         <!-- Testimonials -->
-        <section class="viewport" id="testimonials" class="section">
+        <section class="section" id="testimonials" class="section">
             <div class="section__container">
                 <h1>See what they say about me</h1>
                 <div class="testimonials">
@@ -506,7 +512,7 @@
 
 
         <!-- Contact -->
-        <section id="contact" class="viewport">
+        <section id="contact" class="section">
             <h1 class="contact__title">Let's talk</h1>
             <h2 class="contact__email">hongbin9696@gmail.com</h2>
             <div class="contact__links">
@@ -528,6 +534,12 @@
 
 </body>
 
-<script src="script.js" defer></script>
+
+<script>
+    new fullpage('#full-page', {})
+</script>
+<script src="script.js" defer ></script>
+
+
 
 </html>

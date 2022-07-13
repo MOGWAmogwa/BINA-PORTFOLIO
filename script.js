@@ -1,51 +1,7 @@
 "use strict";
 
 
-// const mainLink = document.querySelector("#main");
-// mainLink.addEventListener("click", (e) => {
-//   window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-// });
-
-// 🥕 Navbar 투명효과
-
-// const repeat = (tagName, height, number) => {
-//   if (window.scrollY > height / number) {
-//     tagName.style.opacity = `${1 - window.scrollY / height}`;
-//   } else {
-//     tagName.style.opacity = 1;
-//   }
-// };
-
-const navbar = document.querySelector("#navbar");
-const navbarHeight = navbar.getBoundingClientRect().height;
-// const navbarLogo = document.querySelector(".navbar__logo");
-// const navabarLogoHeight = navbarLogo.getBoundingClientRect().height;
-// const home = document.querySelector("#home");
-// const homeHeight = home.getBoundingClientRect().height;
-// const wholeHeight = navbarHeight + homeHeight + navabarLogoHeight;
-
-// document.addEventListener("scroll", () => {
-//   repeat(home, wholeHeight, 1.3);
-// });
-
-// 🥕 스크롤 하면 navbar 하단 border 없애기
-
-document.addEventListener("scroll", (e) => {
-  if (window.scrollY > navbarHeight) {
-    navbar.classList.add("navbar__open");
-  } else {
-    navbar.classList.remove("navbar__open");
-  }
-});
-
 // 🥕 스크롤 하면 글자가 아래에서 위로 올라오도록 만들기
-
-// const about = document.querySelector("#about");
-// const aboutHeight = about.getBoundingClientRect().height;
-// const allAboutHeight = aboutHeight + wholeHeight;
-// document.addEventListener("scroll", () => {
-//   repeat(about, allAboutHeight, 1.1);
-// });
 
 const text = document.querySelectorAll(".text");
 
@@ -146,109 +102,50 @@ boxes.forEach((box) => {
   });
 });
 
-const workProjectsContainer = document.querySelector(
-  ".work__projects-container"
-);
-const modalCloseBtn = document.querySelector(".modal-close");
-const body = document.querySelector("body");
-
-boxes.forEach((box) => {
-  box.addEventListener("click", (e) => {
-    navbar.style.display = "none";
-    workProjectsContainer.classList.add("open");
-    modalCloseBtn.classList.add("open");
-    body.classList.add("lock");
-  });
-});
-
-modalCloseBtn.addEventListener("click", (e) => {
-  workProjectsContainer.classList.remove("open");
-  modalCloseBtn.classList.remove("open");
-  navbar.style.display = "flex";
-  body.classList.remove("lock");
-});
-
-// 🥕 스크롤을 하면 smooth하게 페이지가 전체화면으로 보이게끔 만들기
-
-// const viewport = document.querySelectorAll('.viewport');
-
-// const viewportOption = {
-//   root : null,
-//   rootMargin : "0px 0px 300px 0px",
-//   threshold : 0.2,
-// };
-
-// const viewportScroll = (entries, viewportObserver) =>{
-//   entries.forEach(entry =>{
-//     if(!entry.isIntersecting){
-//       entry.target.nextElementSibling.scrollIntoView({behavior : 'smooth'})
-//     } else {
-
-//     }
-//   })
-// };
-
-// const viewportObserver = new IntersectionObserver(viewportScroll, viewportOption)
-
-// viewport.forEach(v => viewportObserver.observe(v))
-
-const sectionIds = [
-  "#main",
-  "#home",
-  "#about",
-  "#introduction",
-  "#menual",
-  "#testimonials",
-  "#contact",
-];
-
-const sectionOption = {
-  root: null,
-  rootMargin: "0px 0px 600px 0px",
-  threshold: 0.9,
-};
-const section = sectionIds.map((sectionId) =>
-  document.querySelector(sectionId)
-);
 
 
 
 
-const sectionScroll = (entries, sectionObserver) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
 
-      const index = sectionIds.indexOf(`#${entry.target.id}`);
-      let selectedIndex; // 현재 section index
-      if (entry.boundingClientRect.y < 0) {
-      // 현재 section이 살짝 화면밖으로 나가는 순간 다음 section을 화면에 불러옴
-        selectedIndex = index + 1 ; // 다음에 불러올 section의 index
-        console.log(sectionIds[selectedIndex]); 
-        document.querySelector(`${sectionIds[selectedIndex]}`).scrollIntoView({behavior : 'smooth'})
-      } 
 
-    } 
-  });
-};
 
-const sectionObserver = new IntersectionObserver(sectionScroll, sectionOption);
 
-section.forEach((s) => sectionObserver.observe(s));
 
-// 🥕 클릭하면 해당 카테고리 화면으로 이동!
 
-// ❓두개가 연동되어 움직이는 오류
-// 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
 
-const navbarMenu = document.querySelector(".navbar__menu");
-navbarMenu.addEventListener("click", (e) => {
-  const target = e.target;
-  const link = target.dataset.link;
-  const scrollTo = document.querySelector(link)
 
-  scrollTo.scrollIntoView({ behavior: "smooth" });
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //nextElementSibling
@@ -313,3 +210,166 @@ navbarMenu.addEventListener("click", (e) => {
 // const observer = new IntersectionObserver(callback, option)
 
 // boxes.forEach(box => observer.observe(box))
+
+
+
+
+// 🥕 스크롤을 하면 smooth하게 페이지가 전체화면으로 보이게끔 만들기
+
+// const viewport = document.querySelectorAll('.viewport');
+
+// const viewportOption = {
+//   root : null,
+//   rootMargin : "0px 0px 300px 0px",
+//   threshold : 0.2,
+// };
+
+// const viewportScroll = (entries, viewportObserver) =>{
+//   entries.forEach(entry =>{
+//     if(!entry.isIntersecting){
+//       entry.target.nextElementSibling.scrollIntoView({behavior : 'smooth'})
+//     } else {
+
+//     }
+//   })
+// };
+
+// const viewportObserver = new IntersectionObserver(viewportScroll, viewportOption)
+
+// viewport.forEach(v => viewportObserver.observe(v))
+
+// const sectionIds = [
+//   "#main",
+//   "#home",
+//   "#about",
+//   "#introduction",
+//   "#menual",
+//   "#testimonials",
+//   "#contact",
+// ];
+
+// const sectionOption = {
+//   root: null,
+//   rootMargin: "0px 0px 600px 0px",
+//   threshold: 0.9,
+// };
+// const section = sectionIds.map((sectionId) =>
+//   document.querySelector(sectionId)
+// );
+
+
+
+
+// const sectionScroll = (entries, sectionObserver) => {
+//   entries.forEach((entry) => {
+//     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+
+//       const index = sectionIds.indexOf(`#${entry.target.id}`);
+//       let selectedIndex; // 현재 section index
+//       if (entry.boundingClientRect.y < 0) {
+//       // 현재 section이 살짝 화면밖으로 나가는 순간 다음 section을 화면에 불러옴
+//         selectedIndex = index + 1 ; // 다음에 불러올 section의 index
+//         // console.log(sectionIds[selectedIndex]); 
+//         document.querySelector(`${sectionIds[selectedIndex]}`).scrollIntoView({behavior : 'smooth'})
+//       } 
+
+//     } 
+//   });
+// };
+
+// const sectionObserver = new IntersectionObserver(sectionScroll, sectionOption);
+
+// section.forEach((s) => sectionObserver.observe(s));
+
+
+// const repeat = (tagName, height, number) => {
+//   if (window.scrollY > height / number) {
+//     tagName.style.opacity = `${1 - window.scrollY / height}`;
+//   } else {
+//     tagName.style.opacity = 1;
+//   }
+// };
+
+// const navbarLogo = document.querySelector(".navbar__logo");
+// const navabarLogoHeight = navbarLogo.getBoundingClientRect().height;
+// const home = document.querySelector("#home");
+// const homeHeight = home.getBoundingClientRect().height;
+// const wholeHeight = navbarHeight + homeHeight + navabarLogoHeight;
+
+// document.addEventListener("scroll", () => {
+//   repeat(home, wholeHeight, 1.3);
+// });
+// const mainLink = document.querySelector("#main");
+// mainLink.addEventListener("click", (e) => {
+//   window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+// });
+
+
+// const about = document.querySelector("#about");
+// const aboutHeight = about.getBoundingClientRect().height;
+// const allAboutHeight = aboutHeight + wholeHeight;
+// document.addEventListener("scroll", () => {
+//   repeat(about, allAboutHeight, 1.1);
+// });
+
+
+
+
+
+
+// 🥕 navbar열기
+
+// const navbar = document.querySelector("#navbar");
+// const navbarHeight = navbar.getBoundingClientRect().height;
+
+// document.addEventListener("scroll", (e) => {
+//   if (window.scrollY > navbarHeight) {
+//     navbar.classList.add("navbar__open");
+//   } else {
+//     navbar.classList.remove("navbar__open");
+//   }
+// });
+
+
+
+// 🥕 modal
+
+// const workProjectsContainer = document.querySelector(
+//   ".work__projects-container"
+// );
+// const modalCloseBtn = document.querySelector(".modal-close");
+// const body = document.querySelector("body");
+
+// boxes.forEach((box) => {
+//   box.addEventListener("click", (e) => {
+//     navbar.style.display = "none";
+//     workProjectsContainer.classList.add("open");
+//     modalCloseBtn.classList.add("open");
+//     body.classList.add("lock");
+//   });
+// });
+
+// modalCloseBtn.addEventListener("click", (e) => {
+//   workProjectsContainer.classList.remove("open");
+//   modalCloseBtn.classList.remove("open");
+//   navbar.style.display = "flex";
+//   body.classList.remove("lock");
+// });
+
+
+// 🥕 클릭하면 해당 카테고리 화면으로 이동!
+
+// ❓두개가 연동되어 움직이는 오류
+// 중간에 버튼을 클릭해버리면 위에 intersecting observer가 관찰하고 있는 섹션이 급작스럽게 바뀌게 됨 
+
+// const navbarMenu = document.querySelector(".navbar__menu");
+// navbarMenu.addEventListener("click", (e) => {
+//   const target = e.target;
+//   const link = target.dataset.link;
+//   const scrollTo = document.querySelector(link)
+//   scrollTo.scrollIntoView({ behavior: "smooth" });
+
+// });
+
+
+

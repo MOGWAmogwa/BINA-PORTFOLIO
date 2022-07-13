@@ -1,0 +1,50 @@
+.s0{
+    background-image: url(./img/bg_img.PNG);
+}
+
+.s1{
+    background-color: red;
+}
+
+
+
+.home__message{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 100%;
+    max-width: 550px;
+    height: 300px;
+    position: relative;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: rgba(122, 117, 104, 0.192) 0px 0px 30px 0px;
+}
+
+.home__message::before{
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    left: 5px;
+    width: 540px;
+    height: 290px
+}
+
+.home__message h1,h2,h3{
+    text-align: center;
+}
+
+.home__message h1{
+    letter-spacing: var(--font__letter--spacing-plus);
+}
+
+.home__message h2{
+    color: var(--color__light-green);
+    font-size: var(--font-regular);
+}
+
+.home__message h3{
+    font-size: var(--font-tiny);
+    font-weight: var(--weight-regular);
+}
