@@ -22,7 +22,7 @@
         </div>
     </div>
 
-
+    <!-- Home -->
 
     <div class="section" id="home">
         <div class="home__message">
@@ -32,54 +32,163 @@
                 owners to create branding that has a clear starategy and head turning design to match. </h3>
         </div>
     </div>
-    <div class="section">3</div>
-    <div class="section">4</div>
-    <div class="section">5</div>
 
-    <script>
-        window.onload = function () {
-            const elm = document.querySelectorAll('.section');
-            const elmCount = elm.length;
-            elm.forEach(function (item, index) {
-                item.addEventListener('mousewheel', function (event) {
-                    event.preventDefault();
-                    let delta = 0;
+    <!-- About -->
 
-                    if (!event) event = window.event;
-                    if (event.wheelDelta) {
-                        delta = event.wheelDelta / 120;
-                        if (window.opera) delta = -delta;
-                    }
-                    else if (event.detail)
-                        delta = -event.detail / 3;
+    <div class="section" id="about">
+        <section class="container">
+            <h3 class="text">Design is way more than just looking pretty. Creating a consistent brand for your
+                business that shows its individual style and story is essential. </h3>
+            <br>
+            <h3 class="text">I take the time to understand the unique qualities of your business and bring this
+                individuality to life with heartfelt designs. I often incorporate elements like hand-drawn fonts and
+                illustrations to give your business that extra unique edge it needs to stand out and tell your
+                customers exactly who you are and what you’re here to do. </h3>
+            <br class="text">
+            <h2 class="text font__change">READY TO TURN SOME HEADS?</h2>
+            <br class="text">
+            <button class="text about__btn"><a href="#">SEE MY RESUME</a></button>
+        </section>
+    </div>
+    <div class="section" id="introduction">
+        <div class="intro-section__container">
+            <div class="img__container">
+                <img src="./img/profile.webp" alt="" class="avatar">
+            </div>
+            <div class="introduction__container">
+                <h1>WHO AM I?</h1>
+                <h2>BRANDING SPECIALIST, ENTERTAINMENT, ALL ROUND BOSS LADY</h2>
+                <h3>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. nostrum sit sint, unde repellendus.
+                    Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!br
+                    <br><br>
+                    Laudantium id ducimus reprehenderit ipsam suscipit minima facere.
+                    <br><br>
+                    Consectetur atque sapiente nobis. Recusandae dolorum quis explicabo impedit!
+                    <br><br>
+                    nostrum sit sint, unde repellendus. Consectetur atque sapiente nobis. Recusandae dolorum quis
+                    explicabo impedit!
+                    <br><br>
+                    ipsum dolor sit amet consectetur, Consectetur atque sapiente nobis. Recusandae dolorum quis
+                    explicabo impedit.
 
-                    let moveTop = window.scrollY;
-                    let elmSelector = elm[index];
+                </h3>
+                <h3 class="font__change">WHAT DO I OFFER? TAKE A LOOK.</h3>
+                <button class="introduction__btn">Click!</button>
 
-                    // wheel down : move to next section
-                    if (delta < 0) {
-                        if (elmSelector !== elmCount - 1) {
-                            try {
-                                moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
-                            } catch (e) { }
-                        }
-                    }
+            </div>
+        </div>
+    </div>
 
-                    // wheel up : move to previous section
-                    else {
-                        if (elmSelector !== 0) {
-                            try {
-                                moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
-                            } catch (e) { }
-                        }
-                    }
+    <!-- Menual -->
 
-                    const body = document.querySelector('html');
-                    window.scrollTo({ top: moveTop, left: 0, behavior: 'smooth' });
-                });
-            });
-        }
-    </script>
+    <div class="section" id="menual">
+        <div class="menual__container">
+            <div class="menual__item pink" data-color=".pink.active">
+                <div class="menual__img-logo ">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h2 class="menual__title">
+                    FRONT-END
+                </h2>
+                <h3 class="menual__description">
+                    A killer website will attract future clients and establish your reputation. I create customised
+                    websites with Squarespace, Wordpress and Wix that perfectly suit your business needs and help
+                    you turn browsers into buyers. Your website will be engaging, eye-catching, easy to navigate and
+                    reflect your brand, values, and purpose.
+                </h3>
+            </div>
+            <div class="menual__item green" data-color=".green.active">
+                <div class="menual__img-logo ">
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+                <h2 class="menual__title">
+                    BACK-END
+                </h2>
+                <h3 class="menual__description">
+                    Show off your branding with assets like social media graphics, business cards and pamphlets.
+                    Supportive graphic designs are a great way to market and promote your business, services or
+                    products. They also help you stand out in a crowded market.
+                </h3>
+            </div>
+            <div class="menual__item yellow">
+                <div class="menual__img-logo ">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <h2 class="menual__title">
+                    GRAPHIC DESIGN
+                </h2>
+                <h3 class="menual__description">
+                    Whether you're starting a new business, or you've outgrown your existing branding, working with
+                    BINA will help you stand out from the crowd and appeal to directly to your ideal clients.
+                    Together, we’ll create a heartfelt strategy paired with head-turning design dedicated to
+                    projecting your vision, passion, and personality to the world.
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+
+    <div class="section" id="testimonials">
+        <div class="section__container">
+            <h1>See what they say about me</h1>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="./img/testimonial/image-daniel.jpg" alt="" class="testimonial__avatar" />
+                    <div class="testimonial__speech-bubble">
+                        <h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cumque enim soluta
+                            placeat quod corporis eos et ipsam id laudantium cum rerum, voluptatibus, unde aperiam
+                            quis ut doloribus nobis sit?
+                        </h3>
+                        <h3 class="name">
+                            <a href="#">
+                                John Doe
+                            </a>
+                            / Front-End Developer
+                        </h3>
+                    </div>
+                </div>
+                <div class="testimonial">
+
+                    <div class="testimonial__speech-bubble">
+                        <h3>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cumque enim soluta
+                            placeat quod corporis eos et ipsam id laudantium cum rerum, voluptatibus, unde aperiam
+                            quis ut doloribus nobis sit?
+                        </h3>
+                        <h3 class="name">
+                            <a href="#">
+                                Jane Doe
+                            </a>
+                            / Back-End Developer
+                        </h3>
+                    </div>
+                    <img src="./img/testimonial/image-jeanette.jpg" alt="" class="testimonial__avatar" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div class="section" id="contact">
+        <h1 class="contact__title">Let's talk</h1>
+        <h2 class="contact__email">hongbin9696@gmail.com</h2>
+        <div class="contact__links">
+            <a href="https://github.com/MOGWAmogwa" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+        <p class="contact_rights">2022 Dream Coding Bina - All rights reserved</p>
+    </div>
+
+
+<script src="./test.js"></script>
 </body>
 
 </html>
